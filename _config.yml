@@ -5,15 +5,13 @@ description              : "Personal website"
 url                      : "https://mrdocror.github.io"
 baseurl                  : ""
 repository               : "mrdocror/mrdocror.github.io"
-logo                     : # path of logo image to display in the masthead
-words_per_minute         : 200
 
 # Site Author
 author:
   name             : "Aliaksandr Babich"
   avatar           : "profile.png"
-  bio              : # Add your bio here if desired
-  location         : # Add your location if desired
+  bio              : "Student at Virginia Tech"
+  location         : "Virginia"
   employer         : "Virginia Tech"
   email            : "aliaksandr2004@gmail.com"
   links:
@@ -24,24 +22,23 @@ author:
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/Aliaksandr-Babich"
 
-# Site Footer
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/mrdocror"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://linkedin.com/in/Aliaksandr-Babich"
+# Navigation
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.5"
 
-# Reading Files
-include:
-  - .htaccess
-  - _pages
+# Site Navigation
+main:
+  - title: "Portfolio"
+    url: /portfolio/
+  - title: "CV"
+    url: /cv/
+  - title: "Guide"
+    url: /guide/
 
 # Collections
 collections:
-  projects:
+  portfolio:
     output: true
     permalink: /:collection/:path/
   guides:
@@ -57,13 +54,14 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _projects
+  # _portfolio
   - scope:
       path: ""
-      type: projects
+      type: portfolio
     values:
       layout: single
       author_profile: true
+      share: true
   # _guides
   - scope:
       path: ""
@@ -71,6 +69,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      share: true
 
 # Build settings
 markdown: kramdown
@@ -82,12 +81,6 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
-
-# Outputting
-permalink: /:categories/:title/
-paginate: 5
-paginate_path: /page:num/
-timezone: America/New_York
 
 # Exclude from processing
 exclude:
@@ -116,5 +109,3 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs
-  - /test
