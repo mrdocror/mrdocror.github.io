@@ -1,24 +1,43 @@
-# Basic Site Settings
-locale                   : "en-US"
-site_theme               : "minimal"
+# Site Settings
 title                    : "Aliaksandr Babich"
-title_separator          : "-"
 name                     : "Aliaksandr Babich"
 description              : "Personal website"
-repository               : "mrdocror/mrdocror.github.io"
-url                      : https://mrdocror.github.io
+url                      : "https://mrdocror.github.io"
 baseurl                  : ""
+repository               : "mrdocror/mrdocror.github.io"
+logo                     : # path of logo image to display in the masthead
+words_per_minute         : 200
 
 # Site Author
 author:
-  avatar           : "profile.png"
   name             : "Aliaksandr Babich"
+  avatar           : "profile.png"
   bio              : # Add your bio here if desired
   location         : # Add your location if desired
   employer         : "Virginia Tech"
   email            : "aliaksandr2004@gmail.com"
-  github           : "mrdocror"
-  linkedin         : "Aliaksandr Babich"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/mrdocror"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/Aliaksandr-Babich"
+
+# Site Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/mrdocror"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/Aliaksandr-Babich"
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
 
 # Collections
 collections:
@@ -53,33 +72,49 @@ defaults:
       layout: single
       author_profile: true
 
-# Navigation
-main_nav:
-  - title: "About"
-    url: /about/
-  - title: "CV"
-    url: /cv/
-  - title: "Projects"
-    url: /projects/
-  - title: "Guides"
-    url: /guides/
-
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "default"
 plugins:
-  - jekyll-feed
+  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Outputting
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: /page:num/
+timezone: America/New_York
 
 # Exclude from processing
 exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
   - Gemfile
   - Gemfile.lock
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
   - node_modules
-  - vendor
-  - _site
-  - .sass-cache
-  - .jekyll-cache
-  - .git
-  - .github
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs
+  - /test
