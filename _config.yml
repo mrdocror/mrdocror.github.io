@@ -1,10 +1,10 @@
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "minimal" # Changed from default to minimal
+site_theme               : "minimal"
 title                    : "Aliaksandr Babich"
 title_separator          : "-"
 name                     : "Aliaksandr Babich"
-description              : "Personal academic website"
+description              : "Personal website"
 repository               : "mrdocror/mrdocror.github.io"
 url                      : https://mrdocror.github.io
 baseurl                  : ""
@@ -22,10 +22,10 @@ author:
 
 # Collections
 collections:
-  teaching:
+  projects:
     output: true
     permalink: /:collection/:path/
-  publications:
+  guides:
     output: true
     permalink: /:collection/:path/
 
@@ -38,20 +38,31 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _teaching
+  # _projects
   - scope:
       path: ""
-      type: teaching
+      type: projects
     values:
       layout: single
       author_profile: true
-  # _publications
+  # _guides
   - scope:
       path: ""
-      type: publications
+      type: guides
     values:
       layout: single
       author_profile: true
+
+# Navigation
+main_nav:
+  - title: "About"
+    url: /about/
+  - title: "CV"
+    url: /cv/
+  - title: "Projects"
+    url: /projects/
+  - title: "Guides"
+    url: /guides/
 
 # Build settings
 markdown: kramdown
@@ -59,7 +70,6 @@ remote_theme: mmistakes/minimal-mistakes
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-paginate
   - jekyll-gist
 
 # Exclude from processing
